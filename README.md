@@ -8,26 +8,26 @@
 
 ### Instructions
 
-1. Build Docker image
+1) Build Docker image
 ```console
 docker-compose build
 ```
 
-2. Download Wikipedia pt-br dump
+2) Download Wikipedia pt-br dump
 ```console
 curl https://dumps.wikimedia.org/ptwiki/latest/ptwiki-latest-pages-articles.xml.bz2 --create-dirs -o data/ptwiki-latest-pages-articles.xml.bz2
 ```
 
-3. Process Wikipedia dump
+3) Process Wikipedia dump
 ```console
 docker-compose run jupyter python src/process_wiki.py data/ptwiki-latest-pages-articles.xml.bz2 data/wiki.pt-br.text
 ```
-4. Train Model
+4) Train Model
 ```console
 docker-compose run jupyter python src/train_word2vec_model.py data/wiki.pt-br.text data/wiki.pt-br.word2vec.model
 ```
 
-5. Run notebook
+5) Run notebook
 ```console
 docker-compose up -d
 ```
