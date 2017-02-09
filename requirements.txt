@@ -1,0 +1,4 @@
+gensim
+Cython
+BeautifulSoup4
+nltk

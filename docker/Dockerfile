@@ -3,6 +3,6 @@ MAINTAINER Daniel Sakuma "dsakuma@gmail.com"
 
 USER jovyan
 
-RUN pip install gensim Cython
-RUN pip install BeautifulSoup4
-RUN pip install nltk
+COPY requirements.txt ./
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
